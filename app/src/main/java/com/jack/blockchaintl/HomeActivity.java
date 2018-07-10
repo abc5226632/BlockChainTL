@@ -3,6 +3,7 @@ package com.jack.blockchaintl;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
@@ -21,6 +22,7 @@ public class HomeActivity extends AppCompatActivity {
     private InterstitialAd mInterstitialAd;
     private AdUtils adUtils;
     private AdRequest adRequest;
+    private Button button;
 
 
     @Override
@@ -29,27 +31,38 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         MobileAds.initialize(this,ADMOD_ID);
+        button = findViewById(R.id.btn);
 
 
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-3986360747906652/2990204627");
         requestNewInterstitial();
 
+
         mInterstitialAd.setAdListener(new AdListener() {
+
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+                button.setVisibility(View.VISIBLE);
+            }
+
             @Override
             public void onAdClosed() {
                 requestNewInterstitial();
                 Toast.makeText(getApplication(),"广告关闭时调用",Toast.LENGTH_LONG).show();
             }
         });
-    }
-
-    public void showAd(View v){
-        if (mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
-        } else {
-            Toast.makeText(getApplication(),"显示失败",Toast.LENGTH_LONG).show();
-        }
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    Toast.makeText(getApplication(),"显示失败",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
     //开始初始化请求
