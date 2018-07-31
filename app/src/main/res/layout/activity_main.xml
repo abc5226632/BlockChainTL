@@ -23,10 +23,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/btn"
+        android:layout_marginTop="100dp"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3986360747906652/2696892285"
-        android:layout_marginTop="70dp">
+        ads:adUnitId="ca-app-pub-3986360747906652/6399427017">
 
     </com.google.android.gms.ads.AdView>
 

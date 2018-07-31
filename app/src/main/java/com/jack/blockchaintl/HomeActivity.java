@@ -31,7 +31,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         MobileAds.initialize(this,ADMOD_ID);
-        button = findViewById(R.id.btn);
+        button = (Button) findViewById(R.id.btn);
 
 
         mInterstitialAd = new InterstitialAd(this);

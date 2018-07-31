@@ -7,5 +7,5 @@ package com.jack.blockchaintl;
 public class Constant {
 
     public static final String ADMOD_ID = "ca-app-pub-3986360747906652~6999917612";
-    public static final String TEST_Device = "92ACB98F6B941632BEE1ABA8A96E1758";
+    public static final String TEST_Device = "CD9BCD375DD330B62D55D403254BC435";
 }

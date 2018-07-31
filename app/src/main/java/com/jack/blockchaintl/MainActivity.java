@@ -8,10 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,15 +38,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        button = findViewById(R.id.btn);
-        ad_banner_01 = findViewById(R.id.ad_banner_01);
-        ad_banner_02 = findViewById(R.id.ad_banner_02);
-        ad_banner_03 = findViewById(R.id.ad_banner_03);
-        ad_banner_04 = findViewById(R.id.ad_banner_04);
-        ad_banner_05 = findViewById(R.id.ad_banner_05);
-        ad_banner_06 = findViewById(R.id.ad_banner_06);
-        ad_banner_07 = findViewById(R.id.ad_banner_07);
-        ad_banner_08 = findViewById(R.id.ad_banner_08);
+        button = (Button) findViewById(R.id.btn);
+        ad_banner_01 = (AdView) findViewById(R.id.ad_banner_01);
+        ad_banner_02 = (AdView) findViewById(R.id.ad_banner_02);
+        ad_banner_03 = (AdView) findViewById(R.id.ad_banner_03);
+        ad_banner_04 = (AdView) findViewById(R.id.ad_banner_04);
+        ad_banner_05 = (AdView) findViewById(R.id.ad_banner_05);
+        ad_banner_06 = (AdView) findViewById(R.id.ad_banner_06);
+        ad_banner_07 = (AdView) findViewById(R.id.ad_banner_07);
+        ad_banner_08 = (AdView) findViewById(R.id.ad_banner_08);
 
         ad_banner_01.setBackgroundColor(Color.GRAY);
         ad_banner_02.setBackgroundColor(Color.GRAY);
