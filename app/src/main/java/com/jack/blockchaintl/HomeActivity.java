@@ -12,7 +12,6 @@ import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
 import static com.jack.blockchaintl.Constant.ADMOD_ID;
-import static com.jack.blockchaintl.Constant.TEST_Device;
 
 /**
  * Created by Administrator on 2018/7/8.
@@ -33,7 +32,7 @@ public class HomeActivity extends AppCompatActivity {
         MobileAds.initialize(this,ADMOD_ID);
         button = (Button) findViewById(R.id.btn);
 
-
+        adUtils = new AdUtils();
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-3986360747906652/2990204627");
         requestNewInterstitial();
@@ -67,9 +66,7 @@ public class HomeActivity extends AppCompatActivity {
 
     //开始初始化请求
     public void requestNewInterstitial() {
-        adRequest = new AdRequest.Builder()
-                .addTestDevice(TEST_Device)//app未打包时作为或者测试广告成功性时需写上测试手机的md5值（可到控制台查看logcat得到）
-                .build();
+        adRequest = adUtils.loadAd(this);
         mInterstitialAd.loadAd(adRequest);
     }
 }
