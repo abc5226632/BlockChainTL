@@ -13,12 +13,13 @@ import com.google.android.gms.ads.MobileAds;
 
 import static com.jack.blockchaintl.Constant.ADMOD_ID;
 import static com.jack.blockchaintl.Constant.InterstitialAd_ID_01;
+import static com.jack.blockchaintl.Constant.InterstitialAd_ID_02;
 
 /**
  * Created by Administrator on 2018/7/8.
  */
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeTwoActivity extends AppCompatActivity {
     private InterstitialAd mInterstitialAd;
     private AdUtils adUtils;
     private AdRequest adRequest;
@@ -35,8 +36,8 @@ public class HomeActivity extends AppCompatActivity {
 
         adUtils = new AdUtils();
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(InterstitialAd_ID_01);
-        button.setText("插页广告_1");
+        mInterstitialAd.setAdUnitId(InterstitialAd_ID_02);
+        button.setText("插页广告_2");
         requestNewInterstitial();
 
 

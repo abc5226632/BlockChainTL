@@ -22,6 +22,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomeActivity" />
+        <activity android:name=".HomeTwoActivity" />
+        <activity android:name=".HomeThreeActivity" />
+        <activity android:name=".HomeFourActivity" />
+        <activity android:name=".HomeFiveActivity" />
+        <activity android:name=".HomeSixActivity" />
+        <activity android:name=".HomeSevenActivity" />
+        <activity android:name=".HomeEightActivity" />
+
+        <activity android:name=".VideoActivity" />
     </application>
 
 </manifest>
