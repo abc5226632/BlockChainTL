@@ -11,17 +11,16 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
+        android:label="${appName}"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" />
         <activity android:name=".HomeTwoActivity" />
         <activity android:name=".HomeThreeActivity" />
         <activity android:name=".HomeFourActivity" />
@@ -30,7 +29,6 @@
         <activity android:name=".HomeSevenActivity" />
         <activity android:name=".HomeEightActivity" />
 
-        <activity android:name=".VideoActivity" />
     </application>
 
 </manifest>

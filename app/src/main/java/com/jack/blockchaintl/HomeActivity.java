@@ -1,5 +1,6 @@
 package com.jack.blockchaintl;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,17 +9,16 @@ import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
 
-import static com.jack.blockchaintl.Constant.ADMOD_ID;
-import static com.jack.blockchaintl.Constant.InterstitialAd_ID_01;
 
 /**
  * Created by Administrator on 2018/7/8.
  */
 
 public class HomeActivity extends AppCompatActivity {
+    private AdView ad_banner;
     private InterstitialAd mInterstitialAd;
     private AdUtils adUtils;
     private AdRequest adRequest;
@@ -30,13 +30,18 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        MobileAds.initialize(this,ADMOD_ID);
-        button = (Button) findViewById(R.id.btn);
-
         adUtils = new AdUtils();
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(InterstitialAd_ID_01);
+        adRequest = adUtils.loadAd(this);
+
+        button = (Button) findViewById(R.id.btn);
         button.setText("插页广告_1");
+
+        ad_banner = (AdView) findViewById(R.id.ad_banner);
+        ad_banner.setBackgroundColor(Color.GRAY);
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.AD_INTERSTITILA_01));
+
         requestNewInterstitial();
 
 
@@ -48,10 +53,6 @@ public class HomeActivity extends AppCompatActivity {
                 button.setVisibility(View.VISIBLE);
             }
 
-            @Override
-            public void onAdClosed() {
-                requestNewInterstitial();
-            }
         });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +68,34 @@ public class HomeActivity extends AppCompatActivity {
 
     //开始初始化请求
     public void requestNewInterstitial() {
-        adRequest = adUtils.loadAd(this);
+        ad_banner.loadAd(adRequest);
         mInterstitialAd.loadAd(adRequest);
+    }
+
+    /** Called when leaving the activity */
+    @Override
+    public void onPause() {
+        if (ad_banner != null) {
+            ad_banner.pause();
+        }
+        super.onPause();
+    }
+
+    /** Called when returning to the activity */
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (ad_banner != null) {
+            ad_banner.resume();
+        }
+    }
+
+    /** Called before the activity is destroyed */
+    @Override
+    public void onDestroy() {
+        if (ad_banner != null) {
+            ad_banner.destroy();
+        }
+        super.onDestroy();
     }
 }

@@ -1,5 +1,6 @@
 package com.jack.blockchaintl;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,18 +9,15 @@ import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
-
-import static com.jack.blockchaintl.Constant.ADMOD_ID;
-import static com.jack.blockchaintl.Constant.InterstitialAd_ID_01;
-import static com.jack.blockchaintl.Constant.InterstitialAd_ID_02;
 
 /**
  * Created by Administrator on 2018/7/8.
  */
 
 public class HomeTwoActivity extends AppCompatActivity {
+    private AdView ad_banner;
     private InterstitialAd mInterstitialAd;
     private AdUtils adUtils;
     private AdRequest adRequest;
@@ -29,15 +27,20 @@ public class HomeTwoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
-
-        MobileAds.initialize(this,ADMOD_ID);
-        button = (Button) findViewById(R.id.btn);
+        setContentView(R.layout.activity_home_two);
 
         adUtils = new AdUtils();
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(InterstitialAd_ID_02);
+        adRequest = adUtils.loadAd(this);
+
+        button = (Button) findViewById(R.id.btn);
         button.setText("插页广告_2");
+
+        ad_banner = (AdView) findViewById(R.id.ad_banner);
+        ad_banner.setBackgroundColor(Color.GRAY);
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.AD_INTERSTITILA_02));
+
         requestNewInterstitial();
 
 
@@ -47,11 +50,6 @@ public class HomeTwoActivity extends AppCompatActivity {
             public void onAdLoaded() {
                 super.onAdLoaded();
                 button.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void onAdClosed() {
-                requestNewInterstitial();
             }
         });
         button.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +66,7 @@ public class HomeTwoActivity extends AppCompatActivity {
 
     //开始初始化请求
     public void requestNewInterstitial() {
-        adRequest = adUtils.loadAd(this);
         mInterstitialAd.loadAd(adRequest);
+        ad_banner.loadAd(adRequest);
     }
 }

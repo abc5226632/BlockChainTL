@@ -19,7 +19,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/btn"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3986360747906652/6399427017">
+        ads:adUnitId="@string/AD_BANANER_01">
     </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>
