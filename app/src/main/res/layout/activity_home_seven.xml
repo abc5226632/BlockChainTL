@@ -18,7 +18,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/btn"
         ads:adSize="MEDIUM_RECTANGLE"
-        ads:adUnitId="ca-app-pub-3986360747906652/2984666893">
+        ads:adUnitId="@string/AD_BANANER_07">
     </com.google.android.gms.ads.AdView>
 
 
