@@ -30,7 +30,7 @@ public class HomeThreeActivity extends AppCompatActivity {
         adRequest = adUtils.loadAd(this);
 
         button = (Button) findViewById(R.id.btn);
-        button.setText("插页广告_3");
+        button.setText("show_3");
 
         ad_banner = (AdView) findViewById(R.id.ad_banner);
         ad_banner.setBackgroundColor(Color.GRAY);
