@@ -9,8 +9,6 @@
     <string name="AD_BANANER_04">ca-app-pub-3986360747906652/3168483811</string>
     <string name="AD_BANANER_05">ca-app-pub-3986360747906652/5259051410</string>
     <string name="AD_BANANER_06">ca-app-pub-3986360747906652/8620136952</string>
-    <string name="AD_BANANER_07">ca-app-pub-3986360747906652/2984666893</string>
-    <string name="AD_BANANER_08">ca-app-pub-3986360747906652/4357458315</string>
 
     <string name="AD_INTERSTITILA_01">ca-app-pub-3986360747906652/2990204627</string>
     <string name="AD_INTERSTITILA_02">ca-app-pub-3986360747906652/1576037216</string>
@@ -18,7 +16,5 @@
     <string name="AD_INTERSTITILA_04">ca-app-pub-3986360747906652/7319318486</string>
     <string name="AD_INTERSTITILA_05">ca-app-pub-3986360747906652/8476487483</string>
     <string name="AD_INTERSTITILA_06">ca-app-pub-3986360747906652/2183785149</string>
-    <string name="AD_INTERSTITILA_07">ca-app-pub-3986360747906652/2591813405</string>
-    <string name="AD_INTERSTITILA_08">ca-app-pub-3986360747906652/5954265920</string>
 
 </resources>

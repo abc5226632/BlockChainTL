@@ -13,42 +13,24 @@ android {
             v2SigningEnabled true
         }
 
-        Mars {
-            storeFile file("D:/WorkSpaces/BlockChainTL/Mars.jks")
-            storePassword "123456789"
-            keyAlias "key0"
-            keyPassword "123456789"
-
-            // 开启 V2 签名
-            v2SigningEnabled true
-        }
     }
     compileSdkVersion 22
     defaultConfig {
         applicationId "com.jack.blockchaintl"
         minSdkVersion 19
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "2.0"
         flavorDimensions "versionCode"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     productFlavors {
         BlockChainTL {
             applicationId "com.jack.blockchaintl"
-            versionCode 1
-            versionName "1.0"
+            versionCode 2
+            versionName "2.0"
             manifestPlaceholders = [appName: "BlockChainTL"]
             signingConfig signingConfigs.BlockChainTL
-        }
-        Mars {
-            minSdkVersion 19
-            applicationId 'com.flying.Mars'
-            targetSdkVersion 22
-            versionCode 2
-            versionName '2.2'
-            manifestPlaceholders = [appName: "Mars"]
-            signingConfig signingConfigs.Mars
         }
     }
     buildTypes {
@@ -60,9 +42,6 @@ android {
     sourceSets{
         BlockChainTL {
             res.srcDir('src/main/res')
-        }
-        Mars {
-            res.srcDir('src/Mars/res')
         }
     }
 }
