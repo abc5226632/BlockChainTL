@@ -40,7 +40,7 @@ public class HomeActivity extends AppCompatActivity {
         ad_banner.setBackgroundColor(Color.GRAY);
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getResources().getString(R.string.AD_INTERSTITILA_01));
+        mInterstitialAd.setAdUnitId(Constant.InterstitialAd_ID_01);
 
         requestNewInterstitial();
 
@@ -70,32 +70,5 @@ public class HomeActivity extends AppCompatActivity {
     public void requestNewInterstitial() {
         ad_banner.loadAd(adRequest);
         mInterstitialAd.loadAd(adRequest);
-    }
-
-    /** Called when leaving the activity */
-    @Override
-    public void onPause() {
-        if (ad_banner != null) {
-            ad_banner.pause();
-        }
-        super.onPause();
-    }
-
-    /** Called when returning to the activity */
-    @Override
-    public void onResume() {
-        super.onResume();
-        if (ad_banner != null) {
-            ad_banner.resume();
-        }
-    }
-
-    /** Called before the activity is destroyed */
-    @Override
-    public void onDestroy() {
-        if (ad_banner != null) {
-            ad_banner.destroy();
-        }
-        super.onDestroy();
     }
 }

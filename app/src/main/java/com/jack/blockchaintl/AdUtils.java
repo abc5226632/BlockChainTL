@@ -14,10 +14,10 @@ public class AdUtils {
 
 
     public static AdRequest loadAd(Context context){
-        MobileAds.initialize(context,context.getResources().getString(R.string.app_id));
+        MobileAds.initialize(context,Constant.ADMOD_ID);
         AdRequest adRequest;
         if (BuildConfig.DEBUG){
-            adRequest = new AdRequest.Builder().addTestDevice(context.getResources().getString(R.string.TEST_Device)).build();
+            adRequest = new AdRequest.Builder().addTestDevice(Constant.TEST_Device).build();
         }else {
             adRequest = new AdRequest.Builder().build();
         }

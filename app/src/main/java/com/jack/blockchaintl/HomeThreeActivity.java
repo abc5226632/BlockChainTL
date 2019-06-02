@@ -36,7 +36,7 @@ public class HomeThreeActivity extends AppCompatActivity {
         ad_banner.setBackgroundColor(Color.GRAY);
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getResources().getString(R.string.AD_INTERSTITILA_03));
+        mInterstitialAd.setAdUnitId(Constant.InterstitialAd_ID_03);
 
         requestNewInterstitial();
 

@@ -39,7 +39,7 @@ public class HomeTwoActivity extends AppCompatActivity {
         ad_banner.setBackgroundColor(Color.GRAY);
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getResources().getString(R.string.AD_INTERSTITILA_02));
+        mInterstitialAd.setAdUnitId(Constant.InterstitialAd_ID_02);
 
         requestNewInterstitial();
 
